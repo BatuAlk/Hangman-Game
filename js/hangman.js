@@ -11,7 +11,7 @@ const items = {
 		"The Dark Knight", "The Lord Of The Rings", "The Matrix", "Inception", "Interstellar", "Psycho",
 		"The Lion King", "Madagascar", "Alien", "Avatar", "Joker", "Up", "Finding Nemo", "Inside Out"],
 	
-	"Şehirler": ["Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın",
+	"Şehirler": ["Adana", "Adıyaman", "Afyonkarahisar", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın",
 		"Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı",
 		"Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir",
 		"Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin",
@@ -160,7 +160,6 @@ const finishGame = () => {
 	} else {
 		alert("Tebrikler! Kılpayı kazandınız :)");
 	}
-	console.log(calculateCorrectLetters(displayItem) + " " + lives);
 	score += calculateCorrectLetters(displayItem) * lives;
 	document.getElementById("score").innerHTML = score;
 	winCount++;
