@@ -142,13 +142,13 @@ const finishGame = () => {
 		score += 10;
 	} else if (7 - lives >= 1 && 7 - lives <= 5) {
 		if (7 - lives === 1) {
-			alert("Tebrikler! Sadece 1 hata ile kazandınız! +8 puan!");
+			alert("Tebrikler! Sadece 1 hata ile kazandınız! +5 puan!");
 			score += 5;
 		} else if (7 - lives === 2) {
-			alert("Tebrikler! Sadece 2 hata ile kazandınız! +6 puan!");
+			alert("Tebrikler! Sadece 2 hata ile kazandınız! +4 puan!");
 			score += 4;
 		} else if (7 - lives === 3) {
-			alert("Tebrikler! 3 hata ile kazandınız! +4 puan!");
+			alert("Tebrikler! 3 hata ile kazandınız! +3 puan!");
 			score += 3;
 		} else if (7 - lives === 4) {
 			alert("Tebrikler! 4 hata ile kazandınız! +2 puan!");
@@ -208,7 +208,6 @@ const guessLetter = (letter) => {
 					displayItem = displayItem.substr(0, i) + letter + displayItem.substr(i + 1);
 				}
 			}
-
 			setTimeout(() => {
 				finishGame();
 			}, 500);
