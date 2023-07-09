@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Adam Asmaca</title>
+	<link rel="icon" type="image/x-icon" href="../images/favicon.png">
+	<script src="../js/hangman.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" 
+		integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" 
+		crossorigin="anonymous">
+	</script>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" 
+		rel="stylesheet" 
+		integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" 
+		crossorigin="anonymous">
+</head>
+<body>
+	<div class="mt-4" style="margin-left: 30px; margin-right: 30px;">
+		<h2 class="header">Adam Asmaca Oyunu</h2>
+		<br>
+		<p>
+			Skorunuz <img src="../images/info.png" width="14" height="14" title="Kalan can hakkınız ile bildiğiniz harf sayısı çarpılarak hesaplanır."> :
+			<span id="score">0</span>
+			<br>
+			Oynadığınız oyun sayısı: <span id="game-count"></span>
+			<br>
+			Kazandığınız oyun sayısı: <span id="win-count"></span>
+			<br>
+			Kaybettiğiniz oyun sayısı: <span id="lose-count"></span>
+			<script>displayCounts(0,0,0)</script>
+			<br><br>
+			Lütfen bir kategori seçiniz:</p>
+		</p>
+
+		<form>
+			<input class="form-check-input" type="radio" id="select-game" onclick="pickCategory('Oyunlar')"> Oyunlar
+			<br>
+			<input class="form-check-input" type="radio" id="select-movie" onclick="pickCategory('Filmler')"> Filmler
+			<br>
+			<input class="form-check-input" type="radio" id="select-city" onclick="pickCategory('Şehirler')"> Şehirler
+		</form>
+
+		<br>
+		<p>Seçiminiz: <span id="display-result"></span></p>
+
+		<button class="btn btn-danger" id="start" onclick="getRandomItem()">Oyunu başlatın</button>
+		<br>
+		<br>
+		<p id="write-item"></p>
+
+		<p>Kullanılabilir harfler: </p>
+		<p id="letters" style="margin-top: 10px; margin-right: 30px;"></p>
+
+		<script>writeAlphabet()</script>
+
+		<canvas id="hangman" width="300" height="200" style="border:1px dashed lightblue"></canvas>
+		<script>drawHanger();</script>
+	</div>
+</body>
+</html>
