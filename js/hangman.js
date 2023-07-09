@@ -11,9 +11,17 @@ const items = {
 		"The Dark Knight", "The Lord Of The Rings", "The Matrix", "Inception", "Interstellar", "Psycho",
 		"The Lion King", "Madagascar", "Alien", "Avatar", "Joker", "Up", "Finding Nemo", "Inside Out"],
 	
-	"Şehirler" : ["Istanbul", "Ankara", "Eskişehir", "Konya", "Kırıkkale", "Balıkesir", "Adana",
-		"Bursa", "Edirne", "Bolu", "Hatay", "Kütahya",
-		"Giresun", "Ağrı", "Hakkari", "Bilecik", "Kilis", "Antalya", "Tekirdağ", "Çanakkale", "Muğla"]
+	"Şehirler": ["Adana", "Adıyaman", "Afyon", "Ağrı", "Amasya", "Ankara", "Antalya", "Artvin", "Aydın",
+		"Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale", "Çankırı",
+		"Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir",
+		"Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin",
+		"Istanbul", "Izmir", "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir",
+		"Kocaeli", "Konya", "Kütahya", "Malatya", "Manisa", "Kahramanmaraş", "Mardin",
+		"Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya", "Samsun",
+		"Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli",
+		"Şanlıurfa", "Uşak", "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt",
+		"Karaman", "Kırıkkale", "Batman", "Şırnak", "Bartın", "Ardahan", "ığdır",
+		"Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"]
 	
 }; // Oyunda kullanılan kategoriler ve ögeler
 
@@ -152,6 +160,7 @@ const finishGame = () => {
 	} else {
 		alert("Tebrikler! Kılpayı kazandınız :)");
 	}
+	console.log(calculateCorrectLetters(displayItem) + " " + lives);
 	score += calculateCorrectLetters(displayItem) * lives;
 	document.getElementById("score").innerHTML = score;
 	winCount++;
@@ -265,7 +274,7 @@ const calculateCorrectLetters = (item) => {
 	*/
 	let count = 0;
 	for (let i = 0; i < item.length; i++) {
-		if (item[i] !== '_' || item[i] !== '-')
+		if (item[i] != '_' && item[i] != '-')
 			count++;
 	}
 	return count;
